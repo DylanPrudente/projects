@@ -15,10 +15,16 @@
     <h1>Serial Position Effect</h1>
     <h2>Your recalled words:</h2>
     <p id="user-recall-list"></p>
+
+    <h2>Words you were trying to recall:</h2>
+    <p id="original-word-list"></p>
+
     <h2>Explanation:</h2>
     <p>
-      The serial position effect refers to the tendency to remember the first and last items in a list better than the middle items.
-      This is due to the <strong>primacy effect</strong> (better recall of early items) and the <strong>recency effect</strong> (better recall of recent items).
+      The serial position effect is a cognitive phenomenon that describes how the position of an item in a list influences how well it is remembered. Specifically, people tend to recall the first items (the <strong>primacy effect</strong>) and the last items (the <strong>recency effect</strong>) more effectively than those in the middle.
+    </p>
+    <p>
+      The primacy effect occurs because early items are more likely to be transferred into long-term memory through rehearsal. In contrast, the recency effect happens because the last items are still in working memory at the time of recall. Items in the middle are often less well remembered because they neither benefit from early rehearsal nor remain in working memory. This effect highlights the interplay between short-term and long-term memory systems.
     </p>
     <button class="btn" onclick="location.href='../../index.html'">Back to Home</button>
   </div>
@@ -26,7 +32,15 @@
   <script>
     // Retrieve recalled words from localStorage
     const recallWords = JSON.parse(localStorage.getItem("serialPositionRecall")) || [];
-    document.getElementById("user-recall-list").textContent = recallWords.join(", ");
+    document.getElementById("user-recall-list").textContent = recallWords.length
+      ? recallWords.join(", ")
+      : "No words recalled.";
+
+    // Retrieve the original word list from localStorage
+    const originalWords = JSON.parse(localStorage.getItem("serialPositionWords")) || [];
+    document.getElementById("original-word-list").textContent = originalWords.length
+      ? originalWords.join(", ")
+      : "No words available.";
   </script>
 </body>
 </html>

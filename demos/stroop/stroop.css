@@ -20,3 +20,12 @@ body {
     margin-top: 20px;
     font-size: 18px;
   }
+
+.container ul {
+  list-style-type: none; /* Remove bullets */
+  padding-left: 0; /* Remove default padding */
+}
+
+.container ul li {
+  margin-bottom: 10px; /* Add spacing between items */
+}

@@ -15,23 +15,57 @@
     <h1>Stroop Test Results</h1>
     <p id="match-time"></p>
     <p id="mismatch-time"></p>
+    <div id="explanation"></div>
     <button onclick="location.href='stroop.html'" class="btn">Try Again</button>
   </div>
 
   <script>
     // Retrieve results from localStorage
     const results = JSON.parse(localStorage.getItem("stroopResults")) || {
-      avgMatchTime: 0,
-      avgMismatchTime: 0,
+      matchTimes: [],
+      mismatchTimes: [],
     };
   
-    // Display results with fallback for empty arrays
+    // Helper function to calculate the average
+    function calculateAverage(times) {
+      if (times.length === 0) return null; // Return null if no times are recorded
+      const total = times.reduce((sum, time) => sum + time, 0);
+      return total / times.length;
+    }
+  
+    // Calculate averages
+    const avgMatchTime = calculateAverage(results.matchTimes);
+    const avgMismatchTime = calculateAverage(results.mismatchTimes);
+  
+    // Display results
     document.getElementById("match-time").textContent = `Average time for matching colors: ${
-      results.avgMatchTime > 0 ? results.avgMatchTime.toFixed(2) : "0.00"
+      avgMatchTime !== null ? avgMatchTime.toFixed(2) : "No data"
     } ms`;
+  
     document.getElementById("mismatch-time").textContent = `Average time for non-matching colors: ${
-      results.avgMismatchTime > 0 ? results.avgMismatchTime.toFixed(2) : "0.00"
+      avgMismatchTime !== null ? avgMismatchTime.toFixed(2) : "No data"
     } ms`;
+
+ // Add explanation
+ const explanation = `
+  <h2>Explanation:</h2>
+  <p>
+    The Stroop Test is a classic psychological experiment that reveals how automatic processes in the brain
+    can interfere with conscious control. In the task, participants are asked to name the color of the ink
+    that a word is printed in—while ignoring the actual word itself.
+  </p>
+  <p>
+    When the word and ink color mismatch (e.g., the word "blue" printed in red ink), people typically take
+    longer to respond and make more errors. This delay, known as the <em>Stroop interference effect</em>,
+    occurs because reading is an automatic process for literate adults, while naming ink colors is less
+    practiced and requires more cognitive control.
+  </p>
+  <p>
+    The test demonstrates the limits of selective attention and the difficulty of overriding automatic
+    responses, offering insights into executive function, attention, and cognitive flexibility.
+  </p>
+`;
+    document.getElementById("explanation").innerHTML = explanation;
   </script>
 </body>
 </html>

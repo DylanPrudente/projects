@@ -14,7 +14,7 @@ body {
 
 /* Top banner */
 header {
-  background-color: #1a73e8;
+  background-color: #3581d9;
   height: 50px;
   width: 100%;
   display: flex;
@@ -59,7 +59,7 @@ main {
 h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #1a1a1a;
+  color: #1e60a9#1e60a9;
 }
 
 p {
@@ -78,7 +78,7 @@ p {
 
 /* Individual demo buttons */
 .demo-links a {
-  background-color: #1a73e8;
+  background-color: #3581d9;
   color: #ffffff;
   text-decoration: none;
   padding: 20px;
@@ -88,7 +88,8 @@ p {
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.4em;
+  font-weight: normal;
   transition: background-color 0.3s ease;
 }
 

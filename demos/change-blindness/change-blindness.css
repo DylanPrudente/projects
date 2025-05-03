@@ -46,7 +46,7 @@ body {
     padding: 10px 20px;
     margin-top: 20px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #1e60a9;
     color: white;
     border: none;
     border-radius: 5px;
@@ -55,3 +55,12 @@ body {
   .btn:hover {
     background-color: #0056b3;
   }
+
+  .container ul {
+  list-style-type: none; 
+  padding-left: 0; 
+}
+
+.container ul li {
+  margin-bottom: 10px; 
+}

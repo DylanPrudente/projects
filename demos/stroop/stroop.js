@@ -58,14 +58,14 @@ function handleKeyPress(event) {
 }
 
 function endTest() {
-  // Calculate average response times
-  const avgMatchTime =
-    responseTimes.match.reduce((a, b) => a + b, 0) / responseTimes.match.length || 0;
-  const avgMismatchTime =
-    responseTimes.mismatch.reduce((a, b) => a + b, 0) / responseTimes.mismatch.length || 0;
-
-  // Save results to localStorage
-  localStorage.setItem("stroopResults", JSON.stringify({ avgMatchTime, avgMismatchTime }));
+  // Save response times to localStorage
+  localStorage.setItem(
+    "stroopResults",
+    JSON.stringify({
+      matchTimes: responseTimes.match,
+      mismatchTimes: responseTimes.mismatch,
+    })
+  );
 
   // Redirect to results page
   window.location.href = "stroop-result.html";

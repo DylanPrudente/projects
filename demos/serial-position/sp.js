@@ -4,6 +4,10 @@ const wordList = [
     "microphone", "gutter", "car", "toaster", "cat",
     "grape", "currency", "glue", "island", "holiday"
   ];
+
+  // Save the original word list to localStorage
+  localStorage.setItem("serialPositionWords", JSON.stringify(wordList));
+
   let displayedWords = [];
   let recallWords = [];
   

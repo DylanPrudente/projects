@@ -61,7 +61,15 @@ function endGame() {
   resultDiv.innerHTML = `
     <h2>Test Over!</h2>
     <p>You reached a maximum sequence length of <strong>${currentLength - 1}</strong>.</p>
-    <p><strong>Explanation:</strong> Working memory is the system your brain uses to hold and manipulate small bits of information for a short period. Most people can hold around 7 ± 2 items in their working memory. This limit explains why phone numbers are typically 7 digits long!</p>
+    <p>
+      Working memory is the system your brain uses to temporarily hold and work with information needed for tasks like problem-solving, reasoning, and learning.
+    </p>
+    <p>
+      A famous study by George Miller found that most people can hold about <strong>7 ± 2 items</strong> in working memory. However, newer research suggests it may be closer to <strong>4 items</strong>, depending on how the information is grouped.
+    </p>
+    <p>
+      This demo tests your "digit span," a common way to measure working memory capacity.
+    </p>
   `;
   resultDiv.classList.remove("hidden");
 }
