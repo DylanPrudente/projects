@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serial Position Effect - Explanation</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="sp.css" />
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <script src="../../navbar.js"></script>
+
+  <div class="container">
+    <h1>Serial Position Effect</h1>
+    <h2>Your recalled words:</h2>
+    <p id="user-recall-list"></p>
+    <h2>Explanation:</h2>
+    <p>
+      The serial position effect refers to the tendency to remember the first and last items in a list better than the middle items.
+      This is due to the <strong>primacy effect</strong> (better recall of early items) and the <strong>recency effect</strong> (better recall of recent items).
+    </p>
+    <button class="btn" onclick="location.href='../../index.html'">Back to Home</button>
+  </div>
+
+  <script>
+    // Retrieve recalled words from localStorage
+    const recallWords = JSON.parse(localStorage.getItem("serialPositionRecall")) || [];
+    document.getElementById("user-recall-list").textContent = recallWords.join(", ");
+  </script>
+</body>
+</html>

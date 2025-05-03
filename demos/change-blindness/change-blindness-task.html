@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Change Blindness Task</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="change-blindness.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Change Blindness Task</h1>
+    <p id="instructions">
+      Spot the difference between the two images. The images will alternate with varying durations.
+    </p>
+    <div id="image-container">
+      <img id="image" src="image1.png" alt="Image 1" />
+    </div>
+    <button id="next-stage-btn" class="btn">Next Stage</button>
+  </div>
+
+  <script>
+    const images = ["image1.png", "image2.png", "blank.png"]; // Include a blank image
+    let stage = 1;
+
+    const durations = {
+      1: { image: 500, blank: 1000 }, // Stage 1: 500ms image, 1000ms blank
+      2: { image: 500, blank: 200 },  // Stage 2: 500ms image, 200ms blank
+      3: { image: 500, blank: 0 }     // Stage 3: 500ms image, no blank
+    };
+
+    const imageEl = document.getElementById("image");
+    const nextStageBtn = document.getElementById("next-stage-btn");
+    const instructionsEl = document.getElementById("instructions");
+
+    let buttonPressed = false;
+
+    nextStageBtn.addEventListener("click", () => {
+      buttonPressed = true;
+    });
+
+    async function startStage() {
+      while (stage <= 3) {
+        buttonPressed = false; // Reset button state for the current stage
+        const { image: imageDuration, blank: blankDuration } = durations[stage];
+
+        if (stage === 3) {
+          // Stage 3: Alternate between image1 and image2 with no blank
+          while (!buttonPressed) {
+            imageEl.src = images[0];
+            await new Promise(resolve => setTimeout(resolve, imageDuration));
+            imageEl.src = images[1];
+            await new Promise(resolve => setTimeout(resolve, imageDuration));
+          }
+        } else {
+          // Stages 1 and 2: Include blank state
+          while (!buttonPressed) {
+            // Show image1
+            imageEl.src = images[0];
+            await new Promise(resolve => setTimeout(resolve, imageDuration));
+            // Show blank image
+            imageEl.src = images[2];
+            await new Promise(resolve => setTimeout(resolve, blankDuration));
+            // Show image2
+            imageEl.src = images[1];
+            await new Promise(resolve => setTimeout(resolve, imageDuration));
+            // Show blank image
+            imageEl.src = images[2];
+            await new Promise(resolve => setTimeout(resolve, blankDuration));
+          }
+        }
+
+        // Update instructions for the next stage
+        if (stage === 1) {
+          instructionsEl.textContent = "Stage 2: Images alternate with a 0.2-second blank.";
+        } else if (stage === 2) {
+          instructionsEl.textContent = "Stage 3: Images alternate with no blank.";
+          nextStageBtn.textContent = "Finish";
+        }
+
+        stage++; // Move to the next stage
+      }
+
+      // Redirect to explanation page after the final stage
+      location.href = "change-blindness-explanation.html";
+    }
+
+    // Start the first stage
+    startStage();
+  </script>
+</body>
+</html>

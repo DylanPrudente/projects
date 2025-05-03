@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Working Memory Test</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="working-memory.css" />
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <script src="../../navbar.js"></script>
+
+  <div class="container">
+    <h1>Working Memory Test</h1>
+    <div id="game-area">
+      <p id="instructions">Click "Start Test" to begin remembering sequences of numbers!</p>
+      <div id="sequence" class="hidden"></div>
+      <input type="text" id="user-input" class="hidden" placeholder="Enter the number" />
+      <button id="start-btn">Start Test</button>
+      <button id="submit-btn" class="hidden">Submit</button>
+    </div>
+    <div id="result" class="hidden"></div>
+    <button id="restart-btn" class="hidden">Try Again</button>
+  </div>
+  <script src="working-memory.js"></script>
+  
+  
+</body>
+</html>

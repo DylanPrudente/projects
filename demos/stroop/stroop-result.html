@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stroop Test Results</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="stroop.css" />
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <script src="../../navbar.js"></script>
+
+  <div class="container">
+    <h1>Stroop Test Results</h1>
+    <p id="match-time"></p>
+    <p id="mismatch-time"></p>
+    <button onclick="location.href='stroop.html'" class="btn">Try Again</button>
+  </div>
+
+  <script>
+    // Retrieve results from localStorage
+    const results = JSON.parse(localStorage.getItem("stroopResults")) || {
+      avgMatchTime: 0,
+      avgMismatchTime: 0,
+    };
+  
+    // Display results with fallback for empty arrays
+    document.getElementById("match-time").textContent = `Average time for matching colors: ${
+      results.avgMatchTime > 0 ? results.avgMatchTime.toFixed(2) : "0.00"
+    } ms`;
+    document.getElementById("mismatch-time").textContent = `Average time for non-matching colors: ${
+      results.avgMismatchTime > 0 ? results.avgMismatchTime.toFixed(2) : "0.00"
+    } ms`;
+  </script>
+</body>
+</html>

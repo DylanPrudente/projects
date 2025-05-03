@@ -1,0 +1,124 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* Top banner */
+header {
+  background-color: #1a73e8;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+/* Fixed top-left Home button */
+#home-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  padding: 12px 20px;
+  background-color: #1e60a9;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#home-button:hover {
+  background-color: #15457d;
+}
+
+/* Main content area */
+main {
+  padding-top: 80px; /* Space below fixed header */
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Title and subheading */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #555555;
+}
+
+/* Demo buttons container */
+.demo-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual demo buttons */
+.demo-links a {
+  background-color: #1a73e8;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 20px;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+
+.demo-links a:hover {
+  background-color: #155ab6;
+}
+
+button {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #1e60a9;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #15457d;
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #888888;
+  text-align: center;
+  padding: 20px 0;
+}

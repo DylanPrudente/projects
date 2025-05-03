@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRM False Memory Test - Explanation</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="drm.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <script src="../../navbar.js"></script>
+
+  <div class="container">
+    <h1>DRM False Memory Test - Results</h1>
+    <h2>Your recalled words:</h2>
+    <p id="user-recall-list"></p>
+    <h2>All words:</h2>
+    <p id="all-words"></p>
+    <h2>Explanation:</h2>
+    <p id="explanation"></p>
+    <button class="btn" onclick="location.href='../../index.html'">Back to Home</button>
+  </div>
+
+  <script>
+    const wordList = ["bed", "rest", "dream", "tired", "pillow", "night", "blanket", "doze", "yawn"];
+    const targetWord = "sleep";
+
+    // Retrieve recalled words from localStorage
+    const recallWords = JSON.parse(localStorage.getItem("recallWords")) || [];
+
+    // Display recalled words
+    document.getElementById("user-recall-list").textContent = recallWords.join(", ");
+
+    // Display all words (for reference)
+    document.getElementById("all-words").textContent = wordList.join(", ");
+
+    // Explanation of DRM effect
+    const explanation = `
+      Many people will recall words that are semantically related to the ones shown (e.g., "sleep"). However, the word "sleep" was not shown in the list, demonstrating the DRM false memory effect.
+    `;
+    document.getElementById("explanation").textContent = explanation;
+  </script>
+</body>
+</html>

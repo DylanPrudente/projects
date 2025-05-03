@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Availability Heuristic Demo</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="ah.css" />
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <script src="../../navbar.js"></script>
+
+  <div class="container">
+    <h1>Availability Heuristic Demo</h1>
+    <p id="instructions">
+      In this task, you will answer questions about which event is more likely. After each question, you will see the correct answer and an explanation.
+    </p>
+    <button class="btn" id="start-btn" onclick="startQuiz()">Start Quiz</button>
+
+    <div id="quiz-container" style="display: none;">
+      <p id="question-text"></p>
+      <div id="options">
+        <button class="btn" id="option-a" onclick="selectAnswer('A')"></button>
+        <button class="btn" id="option-b" onclick="selectAnswer('B')"></button>
+      </div>
+      <p id="feedback" style="display: none;"></p>
+      <button class="btn" id="next-btn" style="display: none;" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div id="results-container" style="display: none;">
+        <h2>Your Results</h2>
+        <p id="score"></p>
+        <ul id="results-list" style="text-align: left; margin: 20px auto; max-width: 600px;"></ul>
+        <p id="explanation">
+          The availability heuristic is a mental shortcut in which people evaluate the likelihood of events based on how easily examples come to mind. News coverage, vivid imagery, or personal experiences can bias our judgment—even when the statistics say otherwise.
+        </p>
+        <button class="btn" onclick="restartQuiz()">Restart Quiz</button>
+      </div>
+  </div>
+
+  <script src="ah.js"></script>
+</body>
+</html>

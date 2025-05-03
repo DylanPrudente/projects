@@ -1,0 +1,37 @@
+/* General container styling */
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Illusion image styling */
+  .illusion-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border: 2px solid #1e60a9;
+    border-radius: 8px;
+  }
+  
+  /* Navigation buttons */
+  .navigation {
+    margin-top: 20px;
+  }
+  
+  .navigation .btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #1e60a9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navigation .btn:hover {
+    background-color: #15457d;
+  }

@@ -1,0 +1,93 @@
+/* General container styling */
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Instructions and question text */
+  #instructions, #question-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  /* Buttons for options */
+  #options .btn {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 400px;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    background-color: white; /* White background */
+    color: #1e60a9; /* Blue text */
+    border: 2px solid #1e60a9; /* Blue outline */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  #options .btn:hover {
+    background-color: #e6f0ff; /* Light blue hover effect */
+  }
+  
+  #options .btn.selected {
+    background-color: #1e60a9; /* Blue background when selected */
+    color: white; /* White text when selected */
+  }
+  
+  /* Feedback text */
+  #feedback {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Results section */
+  #results-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  #results-container p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #results-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #results-list li {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  /* Start, Next, and Restart buttons */
+  #start-btn, #next-btn, #results-container button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: #1e60a9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #start-btn:hover, #next-btn:hover, #results-container button:hover {
+    background-color: #15457d;
+  }
+  
+  /* Centralize the Next button */
+  #next-btn {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
